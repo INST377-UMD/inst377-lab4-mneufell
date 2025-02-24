@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Inst377- Lab 4</title>
+        <link rel = "stylesheet" href = "lab4.css">
+    </head>
+
+    <body id = 'body'>
+        <!--Header Section-->
+        <header id="bar">
+            <h1>INST 377 - Lab 4</h1>
+        </header>
+        <!--Alert Me Section -->
+
+        <form name = "AlertMe" onclick="return validateText()">
+            <label for = "name">Name:</label>
+            <input type = "text" placeholder="Enter First Name" id ="name" required>
+            <button onclick="alertMe()">Alert Me!</button>
+
+        </form>
+        <!--Change The Color Section-->
+        <div class = "changeBackColor">
+            <button onclick =changeColor()>Change the color</button>
+        </div>
+
+        <!--Test Tester Section-->
+        <form name = "tester">
+            <label for = "textTester">Text Tester:</label>
+            <input type = "text" placeholder="Enter Text" id ="text">
+            <button onclick="validateText()">Validate Text</button>
+
+        </form>
+
+        <!--Add Text-->
+        <div class = "AddText">
+            <button onclick =addText()>Add Text</button>
+        </div>
+    
+
+        <!--Script for change back color-->
+        <script type ="text/javascript">
+            function changeColor(){
+                console.log("Attempting to change the color of the page, current color is: ", document.getElementById("body").style.backgroundColor)
+                
+
+                if (document.getElementById("body").style.backgroundColor == 'aqua') {
+                    document.getElementById("body").style.backgroundColor = 'blue';
+                } else {
+                    document.getElementById("body").style.backgroundColor = 'aqua';
+                }
+
+                console.log("Successfully change the color of the page, new color is: ", document.getElementById("body").style.backgroundColor)
+            }
+
+            function alertMe(){
+                alert("Hi Name!")
+            }
+
+            function validateText(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(document.AlertMe.name.value)) {
+                    alert("Please Remove Special Char")
+                    return false;
+                }
+
+            }
+
+            function addText(){
+                
+
+            }
+
+            
+        </script>
+
+            
+    
+
+
+    </body>
+</html>
